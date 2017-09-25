@@ -10,5 +10,6 @@ COPY --from=hadoop-base /usr/local/hadoop-2.7/lib/native /usr/local/hadoop-2.7/l
 ENV LD_LIBRARY_PATH=/usr/local/hadoop-2.7/lib/native/:$LD_LIBRARY_PATH
 ENV SPARK_HOME $PWD/spark-2.2.0-bin-hadoop2.7
 ENV PYSPARK_PYTHON=python3
+ENV PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH
 
 WORKDIR $SPARK_HOME
